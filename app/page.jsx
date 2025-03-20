@@ -4,6 +4,7 @@ import {useState} from "react";
 import Image from "next/image";
 import Sidebar from "@/components/Sidebar";
 import PromptBox from "@/components/PromptBox";
+import Message from "@/components/Message";
 
 
 export default function Home() {
@@ -31,7 +32,7 @@ export default function Home() {
             </>
           ): 
           (<div>
-            hdshgl
+            <Message role='user' content='What is next JS ?'/>
           </div>)
           }
           
