@@ -50,7 +50,7 @@ export async function POST(req) {
             data.messages.push(message);
             data.save();
 
-            return NextResponse({success: true, data: message})
+            return NextResponse.json({success: true, data: message})
 
     } catch (error) {
             return NextResponse.json({success: false, error: error.message})

@@ -6,7 +6,7 @@ import Chat from "@/models/Chat";
 export async function POST(req) {
 
     try {
-        const {userId} = getAuth();
+        const {userId} = getAuth(req);
         const {chatId} = await req.json();
 
         if (!userId) {
@@ -19,7 +19,7 @@ export async function POST(req) {
         // Connect to the database and delete the chat
         
         await connectDB();
-        await Chat.deleteOne({_id:chatId})
+        await Chat.deleteOne({_id:chatId, userId})
 
         return NextResponse.json({success: true, message: "Chat Deleted"})
 
