@@ -17,7 +17,7 @@ export default async function POST(req){
 
         const chatData = {
             userId,
-            message: [],
+            messages: [],
             name: "New Chat"
         }
 
